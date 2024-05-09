@@ -1,3 +1,21 @@
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -31,8 +49,9 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  /* font-size: 3.2em;
   line-height: 1.1;
+  font-family: 'Roboto'; */
 }
 
 button {
