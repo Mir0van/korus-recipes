@@ -1,5 +1,8 @@
 ## Available Scripts
 
+### `yarn install`
+Install all dependencies for the project.
+
 ### `yarn dev`
 Runs the app in the development mode.
 
