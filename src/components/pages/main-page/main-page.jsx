@@ -1,29 +1,27 @@
-// import PropTypes from 'prop-types';
-import { Button } from "antd";
-
-// MainPage.propTypes = {
-//   recipes: PropTypes.arrayOf(PropTypes.shape({
-//     id: PropTypes.number.isRequired,
-//     name: PropTypes.string.isRequired
-//   })).isRequired
-// };
+import {Container} from "../../styled/index"
+import { MainWrapper } from "./styled";
+import Intro from "../../blocks/intro/intro";
+import Recipes from "../../blocks/recipes/recipes";
+import { useState, useEffect } from "react";
 
 export default function MainPage({recipes}) {
-  console.log('props', recipes)
-  // const isLoading = !recipes || !recipes.length;
+  const [filtredRecipes, setFiltredRecipes] = useState(recipes)
+
+  useEffect(() => {
+    if (recipes && recipes.length) {
+      setFiltredRecipes(recipes);
+    }
+  }, [recipes]);
 
   return (
     <>
-      {/* {isLoading ? (
-        <p>Идет загрузка рецептов...</p>
-      ) : (
-        recipes.map((recipe) => {
-          return (
-            <p key={recipe.id}>{recipe.name}</p>
-          )
-        })
-      )} */}
-      <Button type="primary" href="#">Button</Button>
+      <Container>
+        <MainWrapper>
+          <Intro initRecipes={recipes} recipes={filtredRecipes} setFiltredRecipes={setFiltredRecipes}></Intro>
+          <Recipes recipes={filtredRecipes}></Recipes>
+        </MainWrapper>
+      </Container>
+
     </>
   );
 }

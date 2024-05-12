@@ -1,20 +1,14 @@
-import styled from 'styled-components';
-
-const Title = styled.h1`
-  font-size: 3.2em;
-  line-height: 1.1;
-  /* font-family: 'Roboto'; */
-`;
-
-const TestTitle = styled(Title)`
-  text-transform: uppercase;
-`;
+import {Container} from '../../styled/index';
+import { MainHeader, HeaderWrapper, StyledTitle as Title } from './styled';
 
 export default function Header() {
   return (
-    <header>
-      <Title>Сборник рецептов из разных стран мира</Title>
-      <TestTitle>qwe qwerty</TestTitle>
-    </header>
+    <MainHeader>
+      <Container>
+        <HeaderWrapper>
+          <Title>Сборник рецептов из разных стран мира</Title>
+        </HeaderWrapper>
+      </Container>
+    </MainHeader>
   )
 }
