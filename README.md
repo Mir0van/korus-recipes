@@ -3,7 +3,7 @@
 ### `yarn install`
 Install all dependencies for the project.
 
-### `yarn dev`
+### `yarn start`
 Runs the app in the development mode.
 
 ### `yarn build`

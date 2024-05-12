@@ -4,6 +4,7 @@ import introImage from "../../../assets/img/intro.jpg"
 import selectIcon from "../../../assets/img/icon-arrow-bottom.svg"
 import { Typography } from 'antd';
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 
 export default function Intro({initRecipes, recipes, setFiltredRecipes}) {
@@ -14,7 +15,14 @@ export default function Intro({initRecipes, recipes, setFiltredRecipes}) {
   const [selectedType, setSelectedType] = useState("All");
   const [selectedDifficulty, setSelectedDifficulty] = useState("All");
 
-  console.log('recipes', recipes)
+  const getRandomPositiveInteger = (a, b) => {
+    const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+    const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
+    const result = Math.random() * (upper - lower + 1) + lower;
+    return Math.floor(result);
+  };
+
+  // console.log('recipes', recipes)
 
   const filterRecipes = (data, difficultyStatus, cusineStatus, typeStatus) => {
     return data.filter((recipe) => {
@@ -166,7 +174,9 @@ export default function Intro({initRecipes, recipes, setFiltredRecipes}) {
           </Form>
           <LuckyWrapper>
             <LuckyText>А еще можно попробовать на вкус удачу</LuckyText>
-            <Button style={{opacity: 0.5}}>Мне повезет!</Button>
+            <NavLink to={`/recipe/${getRandomPositiveInteger(1, initRecipes && initRecipes.length)}`}>
+              <Button style={{opacity: 0.5}}>Мне повезет!</Button>
+            </NavLink>
           </LuckyWrapper>
         </SectionWrapper>
       </Section>

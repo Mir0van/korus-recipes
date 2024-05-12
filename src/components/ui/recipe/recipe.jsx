@@ -1,4 +1,4 @@
-import { RecipeItem, Column, DescriptionWrapper, ImageWrapper, TitleWrapper, AntdTitle as Title, AntdDescription as TextDescription, AntdText as Text, DefinitionWrapper, DefinitionWrapperClock, DefinitionWrapperStar } from "./styled";
+import { RecipeItem, DescriptionWrapper, ImageWrapper, TitleWrapper, AntdTitle as Title, AntdDescription as TextDescription, AntdText as Text, DefinitionWrapper, DefinitionWrapperClock, DefinitionWrapperStar, StyledLink } from "./styled";
 import cardImage from "../../../assets/img/dish.jpg"
 import clockImage from "../../../assets/img/icon-clock.svg"
 import starImage from "../../../assets/img/icon-star.svg"
@@ -18,31 +18,31 @@ export default function Recipe({recipe}) {
   return (
     <>
       <RecipeItem>
-        <Column>
+        <StyledLink to={`/recipe/${recipe.id}`}>
           <TitleWrapper>
             <Title level={3}>{recipe.name}</Title>
           </TitleWrapper>
           <ImageWrapper>
-          {isImageLoaded ? (
-            <img
-              src={recipe.image}
-              width={226}
-              height={294}
-              alt="Блюдо."
-              loading="lazy"
-            />
-          ) : (
-            <img
-              src={cardImage}
-              width={226}
-              height={294}
-              alt="Блюдо."
-              loading="lazy"
-              onLoad={() => setIsImageLoaded(true)}
-            />
-          )}
+            {isImageLoaded ? (
+              <img
+                src={recipe.image}
+                width={226}
+                height={294}
+                alt="Блюдо."
+                loading="lazy"
+              />
+            ) : (
+              <img
+                src={cardImage}
+                width={226}
+                height={294}
+                alt="Блюдо."
+                loading="lazy"
+                onLoad={() => setIsImageLoaded(true)}
+              />
+            )}
           </ImageWrapper>
-        </Column>
+        </StyledLink>
         <DescriptionWrapper>
           <TextDescription type="secondary">
             {recipe.instructions.join(' ')}

@@ -38,6 +38,7 @@ export const CardsList = styled.ul`
   margin-bottom: 22px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(398px, 1fr));
   gap: 8px 12px;
 `

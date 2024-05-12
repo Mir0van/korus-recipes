@@ -69,6 +69,7 @@ export default function Recipes({recipes}) {
               pageSize={pageSize} 
               total={totalRecipes}
               onChange={onPaginationChange}
+              hideOnSinglePage={true}
             />
             </Flex>
           )}

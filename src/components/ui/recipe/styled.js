@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Typography } from 'antd';
 const { Text, Title, Paragraph } = Typography;
+import { Link } from "react-router-dom";
 
 export const RecipeItem = styled.li`
   background-color: ${props => props.theme.colorBlockBackground};
@@ -10,6 +11,11 @@ export const RecipeItem = styled.li`
 `
 
 export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
+export const StyledLink = styled(Link)`
   display: flex;
   flex-direction: column;
 `
