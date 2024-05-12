@@ -29,11 +29,11 @@ export default function Recipes({recipes}) {
   const endRecipesArray = Math.min(startRecipesArray + pageSize, totalRecipes);
 
   const onPaginationChange = (page) => {
-    console.log(`page selected ${page}`);
+    // console.log(`page selected ${page}`);
     setCurrentPage(page);
   };
 
-  console.log('isloadRecipes', isloadRecipes)
+  // console.log('isloadRecipes', isloadRecipes)
 
   return(
     <>

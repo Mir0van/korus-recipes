@@ -43,7 +43,7 @@ export default function Intro({initRecipes, recipes, setFiltredRecipes}) {
   };
 
   const onCusineChange = (value) => {
-    console.log(`selected ${value}`);
+    // console.log(`selected ${value}`);
     setSelectedCuisine(value);
 
     const filteredRecipes = filterRecipes(initRecipes, selectedDifficulty, value, selectedType)
@@ -52,7 +52,7 @@ export default function Intro({initRecipes, recipes, setFiltredRecipes}) {
   };
 
   const onTypeChange = (value) => {
-    console.log(`selected ${value}`);
+    // console.log(`selected ${value}`);
     setSelectedType(value);
 
     const filteredRecipes = filterRecipes(initRecipes, selectedDifficulty, selectedCuisine, value)
@@ -61,7 +61,7 @@ export default function Intro({initRecipes, recipes, setFiltredRecipes}) {
   };
 
   const onDifficultyChange = (evt) => {
-    console.log(`radio checked:${evt.target.value}`);
+    // console.log(`radio checked:${evt.target.value}`);
     setSelectedDifficulty(evt.target.value);
 
     const filteredRecipes = filterRecipes(initRecipes, evt.target.value, selectedCuisine, selectedType)
